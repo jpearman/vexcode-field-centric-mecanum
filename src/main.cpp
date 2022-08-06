@@ -35,7 +35,7 @@ vex::motor_group  motor_lf( motor_lf1, motor_lf2 );
 vex::motor_group  motor_rf( motor_rf1, motor_rf2 );
 vex::motor_group  motor_rb( motor_rb1, motor_rb2 );
 
-// An instance on an IMU in port 12
+// An instance of an IMU in port 12
 vex::inertial     imu1( PORT12 );
 
 //
@@ -87,7 +87,7 @@ fieldCentrixMecanumDrive(void) {
     double theta = imu1.heading() * deg_to_rad;
       
     // rotate coordinate system - IMU positive angle is CW
-    int temp   = ctrl_right * sin(theta) + ctrl_fwd * cos(theta) ;
+    int temp   = ctrl_right * sin(theta) + ctrl_fwd * cos(theta);
     ctrl_right = ctrl_right * cos(theta) - ctrl_fwd * sin(theta);
     ctrl_fwd = temp;
     
